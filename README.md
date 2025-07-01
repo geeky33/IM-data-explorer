@@ -17,10 +17,10 @@
 - [x] Install `transformers`, `optimum`, and `openvino`
 - [x] Export `openai/clip-vit-base-patch32` to OpenVINO IR (image encoder)
 - [x] Export `openai/clip-vit-base-patch32` to OpenVINO IR (text encoder)
-- [ ] Implement `extractor.py` for image embeddings using OpenVINO
-- [ ] Implement `extractor.py` for text embeddings using OpenVINO
-- [ ] Write `storage.py` for storing embeddings in HDF5 with metadata
-- [ ] Create CLI/utility for batch embedding generation
+- [X] Implement `extractor.py` for image embeddings using OpenVINO
+- [X] Implement `extractor.py` for text embeddings using OpenVINO
+- [X] Write `storage.py` for storing embeddings in HDF5 with metadata
+- [X] Create CLI/utility for batch embedding generation
 - [ ] Write unit tests for extractor on a sample dataset (10–100 items)
 - [ ] Test large-scale extraction (1000+ samples)
 - [ ] Optimize performance (batching, inference caching)
@@ -31,6 +31,68 @@
 - [ ] Connect Datumaro loader output to embedding extractor
 - [ ] Store embeddings + metadata using unified format
 - [ ] Build debug CLI to extract + store + print shape and ID
+
+# 🧠 Interactive Multimodal Data Explorer (GSoC 2025 - Midterm Report)
+
+## 📌 Project Overview
+
+This GSoC project aims to build an **Interactive Multimodal Data Explorer** that uses OpenVINO-accelerated CLIP models to extract, store, and visualize embeddings from datasets in multiple formats like COCO, YOLO, etc., with integration to Datumaro and a lightweight Streamlit frontend.
+
+---
+
+## ✅ Progress Summary (till Midterm)
+
+### 🔹 Completed
+
+- **Environment Setup**
+  - Created isolated Python virtual environment
+  - Installed all core libraries: `openvino`, `optimum`, `transformers`, `datumaro`, etc.
+
+- **Model Export**
+  - Exported `openai/clip-vit-base-patch32` to OpenVINO IR using Docker
+  - Image encoder and text encoder exported successfully to `clip_ov/`
+
+- **Embedding Pipeline**
+  - Implemented `extractor.py` for both image and text encoding using OpenVINO runtime
+  - Implemented `storage.py` to save embeddings in HDF5 format with metadata
+  - Created `test_embed.py` for local testing of 2–3 image files (cat, dog, car)
+
+- **File Structure**
+  - Organized `src/core/embeddings/`, `scripts/`, and testing files clearly
+  - Sample images and test setup ready
+
+---
+
+### 🟡 In Progress / Partial
+
+- **CLI Tool**
+  - `test_embed.py` simulates batch embedding generation, needs full CLI wrapper
+
+- **Streamlit App**
+  - Basic skeleton started, will connect once embedding generation is stabilized
+
+---
+
+### ❌ Not Achieved Yet
+
+- **Datumaro Dataset Integration**
+  - Haven't yet loaded or converted datasets like COCO/YOLO using `datumaro.Dataset.import(...)`
+  - Normalization and format bridging code is pending
+
+- **Unit Tests**
+  - No automated test suite written yet for extractor/storage modules
+
+- **Large-scale Dataset Embedding**
+  - No benchmark dataset (>1000 items) tested yet due to missing Datumaro loader
+
+- **Full CLI + Error Handling**
+  - Embedding pipeline doesn't yet handle failure cases or CLI flags
+
+---
+
+## 🧱 Folder Structure
+
+
 
 1. Validation: “What acceptance test should we use for the embedding extractor?”
 2. Performance targets: “Any latency/throughput numbers we must hit?”
