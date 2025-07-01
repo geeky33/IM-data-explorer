@@ -1,0 +1,37 @@
+# Ignore virtual environment
+freshenv/
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Ignore OpenVINO export outputs
+clip_ov/
+*.xml
+*.bin
+
+# Ignore model cache or checkpoints
+model_cache/
+*.onnx
+
+# Ignore Jupyter extensions or man pages
+**/share/
+**/man/
+
+# Ignore system or editor specific files
+.DS_Store
+*.swp
+*.bak
+
+# Ignore pip wheel build artifacts
+*.egg-info/
+dist/
+build/
+
+# Ignore logs and temp files
+*.log
+*.tmp
+
+# VSCode or IDE folders
+.vscode/
+.idea/
