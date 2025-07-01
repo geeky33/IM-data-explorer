@@ -34,8 +34,6 @@
 | ❌ OpenVINO export      | `optimum-cli export openvino` broke multiple times         | Used Docker with fixed dependencies — finally successful  |
 | ⚠️ Mixed GPU drivers    | OpenVINO defaulted to Intel GPU                            | Forced CPU usage for now — will benchmark GPU later       |
 | ⚠️ Version mismatches   | `optimum` / `onnx` / `openvino` were mismatched             | Learned to pin compatible versions early on               |
-| ⚠️ Huge `.venv` size    | Virtualenv files were showing in `git status`              | Learned to use `.gitignore` — will clean up repo          |
-
 ---
 
 ## 🙋‍♀️ What I Need Mentor Input On
