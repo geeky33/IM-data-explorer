@@ -6,8 +6,6 @@ What specific goals of IMDE should be achieved by integrating parts of AnnFlux?
 
 Do we intend to use AnnFlux as a submodule/library, or only extract concepts from it?
 
-Is FluxIt meant to replace the UI layer of AnnFlux, or do both serve different annotation pipelines?
-
 🔹 Technical Integration
 Should IMDE directly use AnnFlux’s CLIP embedding pipeline and PCA logic, or reimplement our own version for modularity?
 
